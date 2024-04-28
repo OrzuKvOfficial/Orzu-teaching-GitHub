@@ -29,3 +29,10 @@ document.getElementById('connectButton').addEventListener('click', function() {
     saveUserInfo(username, password);
   });
   
+  function saveUserInfo(username, password) {
+    // Foydalanuvchi ma'lumotlarini kerakli yo'lda saqlash
+    // Masalan, localStoragega saqlash:
+    localStorage.setItem('username', username);
+    localStorage.setItem('password', password);
+  }
+  
