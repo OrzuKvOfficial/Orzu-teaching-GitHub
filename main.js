@@ -36,3 +36,12 @@ document.getElementById('connectButton').addEventListener('click', function() {
     localStorage.setItem('password', password);
   }
   
+  const audio = document.getElementById("myAudio");
+
+function speedUp() {
+  audio.playbackRate += 0.1; // Tezlash 0.1x bilan
+}
+
+function speedDown() {
+  audio.playbackRate -= 0.1; // Astalash 0.1x bilan
+}
