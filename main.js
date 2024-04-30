@@ -56,3 +56,7 @@ function getRandomNumber(min, max) {
 }
 
 console.log(getRandomNumber(1, 100)); // 1 dan 100 gacha tasodifiy son
+const name = "John";
+name.split("").forEach(letter => {
+  console.log(letter);
+});
