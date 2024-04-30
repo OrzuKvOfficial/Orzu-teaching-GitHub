@@ -45,3 +45,14 @@ function speedUp() {
 function speedDown() {
   audio.playbackRate -= 0.1; // Astalash 0.1x bilan
 }
+function fibonacci(n) {
+  if (n <= 1) return n;
+  return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+console.log(fibonacci(10)); // Fibonacci ketma-ketligining 10-raqami
+function getRandomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+console.log(getRandomNumber(1, 100)); // 1 dan 100 gacha tasodifiy son
