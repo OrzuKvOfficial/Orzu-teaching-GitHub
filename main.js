@@ -69,3 +69,8 @@ console.log(kichikMatn); // "bu matn kichik bilan boshlanadi."
 console.log(kattaMatn); // "BU MATN KICHIK BILAN BOSHLANADI."
 console.log(matn.charAt(4)); // "S"
 console.log(matn.charCodeAt(4)); // 83 (Unicode qiymati)
+
+let matn1 = "Salom, ";
+let matn2 = "dunyo!";
+let jamiMatn = matn1 + matn2;
+console.log(jamiMatn); // "Salom, dunyo!"
