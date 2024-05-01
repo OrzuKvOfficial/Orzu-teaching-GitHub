@@ -60,3 +60,9 @@ const name = "John";
 name.split("").forEach(letter => {
   console.log(letter);
 });
+
+let matn = "Bu Matn Kichik Bilan Boshlanadi.";
+let kichikMatn = matn.toLowerCase();
+let kattaMatn = matn.toUpperCase();
+console.log(kichikMatn); // "bu matn kichik bilan boshlanadi."
+console.log(kattaMatn); // "BU MATN KICHIK BILAN BOSHLANADI."
