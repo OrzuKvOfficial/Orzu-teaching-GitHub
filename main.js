@@ -61,8 +61,11 @@ name.split("").forEach(letter => {
   console.log(letter);
 });
 
-let matn = "Bu Matn Kichik Bilan Boshlanadi.";
+
+let matn = "JavaScript";
 let kichikMatn = matn.toLowerCase();
 let kattaMatn = matn.toUpperCase();
 console.log(kichikMatn); // "bu matn kichik bilan boshlanadi."
 console.log(kattaMatn); // "BU MATN KICHIK BILAN BOSHLANADI."
+console.log(matn.charAt(4)); // "S"
+console.log(matn.charCodeAt(4)); // 83 (Unicode qiymati)
