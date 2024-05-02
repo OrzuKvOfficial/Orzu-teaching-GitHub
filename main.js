@@ -74,3 +74,13 @@ let matn1 = "Salom, ";
 let matn2 = "dunyo!";
 let jamiMatn = matn1 + matn2;
 console.log(jamiMatn); // "Salom, dunyo!"
+
+// Xotira yaratish
+var xotira = [];
+
+// Ma'lumot qo'shish
+xotira.push("Ma'lumot");
+
+// Ma'lumotni olish
+var malumot = xotira[0];
+console.log(malumot); // "Ma'lumot"
