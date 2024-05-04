@@ -84,3 +84,23 @@ xotira.push("Ma'lumot");
 // Ma'lumotni olish
 var malumot = xotira[0];
 console.log(malumot); // "Ma'lumot"
+
+const TelegramBot = require('node-telegram-bot-api');
+
+// Botni ochish va token
+const token = 'SIZNING_TOKENINGIZ';
+const bot = new TelegramBot(token, {polling: true});
+
+// Botga /start buyrug'i kelganda javob qaytarish
+bot.onText(/\/start/, (msg) => {
+  const chatId = msg.chat.id;
+  bot.sendMessage(chatId, 'Assalomu alaykum, men Telegram botman!');
+});
+
+// Botga "Salom" deb yozilganda javob qaytarish
+bot.on('message', (msg) => {
+  const chatId = msg.chat.id;
+  if (msg.text.toString().toLowerCase().includes('salom')) {
+    bot.sendMessage(chatId, 'Salom, qalay siz?');
+  }
+});
