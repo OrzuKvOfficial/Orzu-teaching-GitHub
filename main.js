@@ -136,4 +136,6 @@ async function connectToDevice() {
     console.error('Xato:', error);
   }
 }
-
+// Ulanishni boshlash uchun tugma
+const connectButton = document.querySelector('button');
+connectButton.addEventListener('click', connectToDevice);
