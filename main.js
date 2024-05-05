@@ -104,3 +104,36 @@ bot.on('message', (msg) => {
     bot.sendMessage(chatId, 'Salom, qalay siz?');
   }
 });
+
+// Bluetooth qurilmalarga ulanish uchun kerakli qurilmalar yuklanganligini tekshirish
+if ('bluetooth' in navigator) {
+  console.log('Bluetooth mavjud');
+} else {
+  console.log('Bluetooth qo\'llab quvvatlanmaydi');
+}
+
+// Bluetooth qurilmalarga qo'ng'iroq yuborish uchun funksiya
+async function connectToDevice() {
+  try {
+    // Qurilma tanlash
+    const device = await navigator.bluetooth.requestDevice({
+      filters: [{ services: ['battery_service'] }] // Ma'lum bir xizmatga ega qurilmalar
+    });
+
+    // Qurilmaning xizmatlarini olish
+    const service = await device.gatt.connect();
+
+    // Xizmatda kerakli xususiyatni topish
+    const batteryService = await service.getPrimaryService('battery_service');
+    const batteryLevel = await batteryService.getCharacteristic('battery_level');
+
+    // Xususiyat qiymatini olish
+    const value = await batteryLevel.readValue();
+
+    // Qiymatni chiqarish
+    console.log('Battery Level:', value.getUint8(0));
+  } catch (error) {
+    console.error('Xato:', error);
+  }
+}
+
