@@ -139,3 +139,24 @@ async function connectToDevice() {
 // Ulanishni boshlash uchun tugma
 const connectButton = document.querySelector('button');
 connectButton.addEventListener('click', connectToDevice);
+// List yaratish
+var myList = [1, 2, 3, 4, 5];
+
+// Elementlarga murojat
+console.log(myList[0]); // 1
+console.log(myList[2]); // 3
+
+// List uzunligi
+console.log(myList.length); // 5
+
+// Element qo'shish
+myList.push(6);
+console.log(myList); // [1, 2, 3, 4, 5, 6]
+
+// Elementni o'zgartirish
+myList[1] = 10;
+console.log(myList); // [1, 10, 3, 4, 5, 6]
+
+// Elementni o'chirish
+myList.splice(2, 1);
+console.log(myList); // [1, 10, 4, 5, 6]
