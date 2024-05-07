@@ -160,3 +160,32 @@ console.log(myList); // [1, 10, 3, 4, 5, 6]
 // Elementni o'chirish
 myList.splice(2, 1);
 console.log(myList); // [1, 10, 4, 5, 6]
+
+// Nodemailer modulini chaqirish
+const nodemailer = require('nodemailer');
+
+// Jo'natiladigan email manzili va autentifikatsiya ma'lumotlari
+const transporter = nodemailer.createTransport({
+  service: 'Gmail', // Pochta xizmati (masalan, Gmail)
+  auth: {
+    user: 'sender@gmail.com', // Jo'natuvchi email manzili
+    pass: 'yourpassword' // Jo'natuvchi email paroli
+  }
+});
+
+// Jo'natish uchun xabar ma'lumotlari
+const mailOptions = {
+  from: 'sender@gmail.com', // Jo'natuvchi email manzili
+  to: 'recipient@example.com', // Qabul qiluvchi email manzili
+  subject: 'Sarlavha', // Xabar sarlavhasi
+  text: 'Xabar matni' // Xabar matni
+};
+
+// Xabarni yuborish
+transporter.sendMail(mailOptions, function(error, info){
+  if (error) {
+    console.log(error);
+  } else {
+    console.log('Xabar yuborildi: ' + info.response);
+  }
+});
