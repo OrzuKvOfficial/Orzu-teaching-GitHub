@@ -189,3 +189,12 @@ transporter.sendMail(mailOptions, function(error, info){
     console.log('Xabar yuborildi: ' + info.response);
   }
 });
+var send = document.getElementById("musiqa");
+
+  function playMusic() {
+    audio.play();
+  }
+
+  function pauseMusic() {
+    audio.pause();
+  }
