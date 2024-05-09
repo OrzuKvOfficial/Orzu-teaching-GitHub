@@ -198,3 +198,9 @@ var send = document.getElementById("musiqa");
   function pauseMusic() {
     audio.pause();
   }
+  function malumotQabul(qabulQilinganMalumot) {
+    console.log("Qabul qilingan malumot: " + qabulQilinganMalumot);
+}
+
+// Funksiyani chaqirish
+malumotQabul("Salom, dunyo!"); // "Salom, dunyo!" deb chiqadi
