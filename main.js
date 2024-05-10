@@ -204,3 +204,8 @@ var send = document.getElementById("musiqa");
 
 // Funksiyani chaqirish
 malumotQabul("Salom, dunyo!"); // "Salom, dunyo!" deb chiqadi
+
+function sendData() {
+  // Burada göndərmək istədiyiniz məlumatları prosesləyəcək kodlar olmalıdır
+  console.log("Data sent!"); // Bu, sadəcə konsol logudur. Gerçək prosesləmə funksiyası burada olmalıdır.
+}
