@@ -209,3 +209,19 @@ function sendData() {
   // Burada göndərmək istədiyiniz məlumatları prosesləyəcək kodlar olmalıdır
   console.log("Data sent!"); // Bu, sadəcə konsol logudur. Gerçək prosesləmə funksiyası burada olmalıdır.
 }
+// Tarjima ma'lumotlarini saqlash uchun lug'at
+var tarjima = {
+    "salom": "hello",
+    "hayr": "goodbye",
+    // Yana boshqa so'zlar qo'shishingiz mumkin
+};
+
+// So'zni tarjima qiluvchi funksiya
+function tarjima_qilish(soz) {
+    return tarjima[soz] || "Tarjima topilmadi";
+}
+
+// Test qilish
+console.log(tarjima_qilish("salom"));  // "hello" chiqadi
+console.log(tarjima_qilish("hayr"));   // "goodbye" chiqadi
+console.log(tarjima_qilish("nima gap"));  // "Tarjima topilmadi" chiqadi
