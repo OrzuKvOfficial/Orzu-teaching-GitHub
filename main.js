@@ -233,3 +233,13 @@ axios.get('malumotlar.json')
   .catch(function (error) {
     console.log(error);
   });
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      // Malumotlarni qabul qilingan holatda amalni bajarish
+      console.log(this.responseText);
+    }
+  };
+  xhttp.open("GET", "malumotlar.php", true);
+  xhttp.send();
+  
