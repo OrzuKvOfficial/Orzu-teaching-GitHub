@@ -225,3 +225,11 @@ function tarjima_qilish(soz) {
 console.log(tarjima_qilish("salom"));  // "hello" chiqadi
 console.log(tarjima_qilish("hayr"));   // "goodbye" chiqadi
 console.log(tarjima_qilish("nima gap"));  // "Tarjima topilmadi" chiqadi
+$.ajax({
+  url: "malumotlar.php",
+  method: "GET",
+  success: function(response) {
+    // Malumotlarni qabul qilingan holatda amalni bajarish
+    console.log(response);
+  }
+});
