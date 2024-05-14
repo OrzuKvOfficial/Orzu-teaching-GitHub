@@ -242,4 +242,20 @@ axios.get('malumotlar.json')
   };
   xhttp.open("GET", "malumotlar.php", true);
   xhttp.send();
+  const startButton = document.getElementById('start');
+  const output = document.getElementById('output');
   
+  // Ovozni boshlash uchun funktsiya
+  function startListening() {
+      const recognition = new webkitSpeechRecognition();
+      recognition.lang = 'en-US';
+
+      recognition.onresult = function(event) {
+          const transcript = event.results[0][0].transcript;
+          output.textContent = transcript;
+      }
+
+      recognition.start();
+  }
+
+  startButton.addEventListener('click', startListening);  
