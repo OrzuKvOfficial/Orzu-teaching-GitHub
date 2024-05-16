@@ -259,3 +259,33 @@ axios.get('malumotlar.json')
   }
 
   startButton.addEventListener('click', startListening);  
+  // Ma'lumotlar bazasini ochish
+var request = indexedDB.open("myDatabase", 2);
+
+request.onupgradeneeded = function(event) {
+  var db = event.target.result;
+  var objectStore = db.createObjectStore("customers", { keyPath: "id" });
+}
+
+// Ma'lumotlarni saqlash
+var request = db.transaction(["customers"], "readwrite")
+                .objectStore("customers")
+                .add({ id: "01", name: "John Doe", age: 30, email: "john@example.com" });
+
+// Ma'lumotlarni olish
+var transaction = db.transaction(["customers"]);
+var objectStore = transaction.objectStore("customers");
+var request = objectStore.get("01");
+request.onerror = function(event) {
+  console.log("Error getting data");
+};
+request.onsuccess = function(event) {
+  console.log("Name: " + request.result.name);
+};
+
+// Ma'lumotlarni o'chirish
+var request = db.transaction(["customers"], "readwrite")
+                .objectStore("customers")
+                .delete("01");
+
+                
