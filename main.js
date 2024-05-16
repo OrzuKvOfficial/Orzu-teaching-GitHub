@@ -258,6 +258,15 @@ axios.get('malumotlar.json')
       recognition.start();
   }
   // Ma'lumotlarni saqlash
+localStorage.setItem('key', 'value');
+
+// Ma'lumotlarni olish
+var value = localStorage.getItem('key');
+
+// Ma'lumotlarni o'chirish
+localStorage.removeItem('key');
+
+  // Ma'lumotlarni saqlash
 document.cookie = "username=John Doe; expires=Thu, 18 Dec 2024 12:00:00 UTC; path=/";
 
 // Ma'lumotlarni olish
