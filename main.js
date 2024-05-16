@@ -257,6 +257,15 @@ axios.get('malumotlar.json')
 
       recognition.start();
   }
+  // Ma'lumotlarni saqlash
+document.cookie = "username=John Doe; expires=Thu, 18 Dec 2024 12:00:00 UTC; path=/";
+
+// Ma'lumotlarni olish
+var cookieValue = document.cookie;
+
+// Ma'lumotlarni o'chirish
+document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+
 
   startButton.addEventListener('click', startListening);  
   // Ma'lumotlar bazasini ochish
@@ -288,4 +297,3 @@ var request = db.transaction(["customers"], "readwrite")
                 .objectStore("customers")
                 .delete("01");
 
-                
