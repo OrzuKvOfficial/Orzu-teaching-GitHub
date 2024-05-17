@@ -65,3 +65,31 @@ elif secim == '4':
 
 else:
     print("Geçersiz giriş")
+
+import subprocess
+
+def connect_to_wifi(ssid, password):
+    try:
+        # Wi-Fi ulanishini sozlash
+        config = f"""
+        network={{
+            ssid="{ssid}"
+            psk="{password}"
+        }}
+        """
+        
+        # Wpa_supplicant konfiguratsiya faylini yaratish
+        with open('/etc/wpa_supplicant/wpa_supplicant.conf', 'w') as file:
+            file.write(config)
+
+        # Wpa_supplicant xizmatini qayta ishga tushirish
+        subprocess.run(['sudo', 'wpa_cli', '-i', 'wlan0', 'reconfigure'], check=True)
+        print(f'{ssid} tarmog‘iga ulanish amalga oshirildi.')
+
+    except subprocess.CalledProcessError as e:
+        print(f'Xatolik yuz berdi: {e}')
+
+# Wi-Fi tarmog'iga ulanish
+ssid = "your_ssid"
+password = "your_password"
+connect_to_wifi(ssid, password)
