@@ -93,3 +93,23 @@ def connect_to_wifi(ssid, password):
 ssid = "your_ssid"
 password = "your_password"
 connect_to_wifi(ssid, password)
+
+import dash
+from dash import html, dcc
+import plotly.graph_objs as go
+import dash_core_components as dcc
+
+app = dash.Dash(__name__)
+
+# Layout
+app.layout = html.Div(style={'textAlign': 'center', 'backgroundColor': '#f0f0f0', 'height': '100vh', 'display': 'flex', 'flexDirection': 'column', 'justifyContent': 'center', 'alignItems': 'center'}, children=[
+    html.Div(style={'display': 'flex', 'gap': '20px'}, children=[
+        html.Div(style={'width': '100px', 'height': '100px', 'backgroundColor': '#ff6347', 'borderRadius': '50%'}, id='circle'),
+        html.Div(style={'width': '0', 'height': '0', 'borderLeft': '50px solid transparent', 'borderRight': '50px solid transparent', 'borderBottom': '100px solid #4682b4'}, id='triangle'),
+        html.Div(style={'width': '100px', 'height': '100px', 'backgroundColor': '#32cd32'}, id='square')
+    ])
+])
+
+# Run the app
+if __name__ == '__main__':
+    app.run_server(debug=True)
