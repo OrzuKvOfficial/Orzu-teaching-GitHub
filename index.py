@@ -113,3 +113,16 @@ app.layout = html.Div(style={'textAlign': 'center', 'backgroundColor': '#f0f0f0'
 # Run the app
 if __name__ == '__main__':
     app.run_server(debug=True)
+
+import csv
+
+# Ma'lumotlarni Exseldan olish uchun pandas kutubxonasidan foydalanamiz
+import pandas as pd
+
+# Exsel faylini o'qiymiz
+df = pd.read_excel('your_file.xlsx')
+
+# DataFrame'ni CSV formatiga o'girib, faylga saqlaymiz
+df.to_csv('output.csv', index=False)
+
+print("Ma'lumotlar muvaffaqiyatli CSV formatiga o'tkazildi va 'output.csv' fayliga saqlandi.")
