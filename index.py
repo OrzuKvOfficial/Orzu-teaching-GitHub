@@ -126,3 +126,19 @@ df = pd.read_excel('your_file.xlsx')
 df.to_csv('output.csv', index=False)
 
 print("Ma'lumotlar muvaffaqiyatli CSV formatiga o'tkazildi va 'output.csv' fayliga saqlandi.")
+
+from sqlalchemy import create_engine
+
+# Ma'lumotlarni Exseldan olish uchun pandas kutubxonasidan foydalanamiz
+import pandas as pd
+
+# Exsel faylini o'qiymiz
+df = pd.read_excel('your_file.xlsx')
+
+# SQL aloqasini o'rnatamiz (bu yerda SQLite'ni misol sifatida ko'rsatamiz)
+engine = create_engine('sqlite:///output.db')
+
+# DataFrame'ni SQL bazaga yozamiz
+df.to_sql('table_name', con=engine, if_exists='replace', index=False)
+
+print("Ma'lumotlar muvaffaqiyatli SQL bazaga o'tkazildi va 'output.db' fayliga saqlandi.")
