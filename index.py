@@ -162,3 +162,34 @@ while True:
 
 client_sock.close()
 server_sock.close()
+import bluetooth
+
+target_name = "Qurilmangizning_nomi"  # Telefonning Bluetooth nomi
+target_address = None
+
+nearby_devices = bluetooth.discover_devices()
+
+for bdaddr in nearby_devices:
+    if target_name == bluetooth.lookup_name(bdaddr):
+        target_address = bdaddr
+        break
+
+if target_address is not None:
+    print(f"Qurilma topildi: {target_address}")
+else:
+    print("Qurilma topilmadi.")
+    exit()
+
+sock = bluetooth.BluetoothSocket(bluetooth.RFCOMM)
+port = 1
+sock.connect((target_address, port))
+
+while True:
+    message = input("Yuborish uchun xabar kiriting: ")
+    if message.lower() == "exit":
+        break
+    sock.send(message)
+    data = sock.recv(1024)
+    print(f"Olingan javob: {data.decode('utf-8')}")
+
+sock.close()
