@@ -193,3 +193,20 @@ while True:
     print(f"Olingan javob: {data.decode('utf-8')}")
 
 sock.close()
+
+from flask import Flask, request, jsonify
+from googletrans import Translator
+
+app = Flask(__name__)
+translator = Translator()
+
+@app.route('/translate', methods=['POST'])
+def translate_text():
+    data = request.get_json()
+    text = data['text']
+    dest_lang = data['dest_lang']
+    translated = translator.translate(text, dest=dest_lang)
+    return jsonify({'translated_text': translated.text})
+
+if __name__ == '__main__':
+    app.run(debug=True)
