@@ -210,3 +210,20 @@ def translate_text():
 
 if __name__ == '__main__':
     app.run(debug=True)
+import pygame
+import time
+
+# Pygame kutubxonasini boshlash
+pygame.mixer.init()
+
+# Musiqa faylini yuklash
+pygame.mixer.music.load('your_music_file.mp3')
+
+# Musiqani o'ynatish
+pygame.mixer.music.play()
+
+# Musiqa tugaguncha kutish
+while pygame.mixer.music.get_busy():
+    time.sleep(1)
+
+print("Musiqa tugadi!")
