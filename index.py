@@ -227,3 +227,20 @@ while pygame.mixer.music.get_busy():
     time.sleep(1)
 
 print("Musiqa tugadi!")
+from flask import Flask, render_template, request, jsonify
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/process', methods=['POST'])
+def process():
+    data = request.json
+    name = data.get('name')
+    response = {'message': f'Hello, {name}!'}
+    return jsonify(response)
+
+if __name__ == '__main__':
+    app.run(debug=True)
