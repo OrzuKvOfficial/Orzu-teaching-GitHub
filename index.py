@@ -244,3 +244,10 @@ def process():
 
 if __name__ == '__main__':
     app.run(debug=True)
+# Faylni ochish va yozuvlarni o'qish
+with open('yozuvlar.txt', 'r', encoding='utf-8') as fayl:
+    yozuvlar = fayl.readlines()
+
+# Har bir yozuvni ko'rsatish
+for yozuv in yozuvlar:
+    print(yozuv.strip())  # .strip() bo'shliqlarni olib tashlaydi
