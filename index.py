@@ -251,3 +251,13 @@ with open('yozuvlar.txt', 'r', encoding='utf-8') as fayl:
 # Har bir yozuvni ko'rsatish
 for yozuv in yozuvlar:
     print(yozuv.strip())  # .strip() bo'shliqlarni olib tashlaydi
+# sort() metodi misoli
+my_list = [5, 2, 9, 1, 5, 6]
+my_list.sort()
+print("sort() metodi bilan:", my_list)  # Natija: [1, 2, 5, 5, 6, 9]
+
+# sorted() funksiyasi misoli
+my_list = [5, 2, 9, 1, 5, 6]
+sorted_list = sorted(my_list)
+print("sorted() funksiyasi bilan:", sorted_list)  # Natija: [1, 2, 5, 5, 6, 9]
+print("Asl list:", my_list)  # Asl list o'zgarmaydi: [5, 2, 9, 1, 5, 6]
